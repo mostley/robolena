@@ -16,6 +16,11 @@ volatile int cols[]={ // PC0,PD4,PB6!,PB3,PD5,PB4,PC2,PC3
 volatile int rows[]={ // PB2,PC1,PD7,PB5,PD2,PD6,PD3,PB7!
   MTX_ROW1,MTX_ROW2,MTX_ROW3,MTX_ROW4,MTX_ROW5,MTX_ROW6,MTX_ROW7,MTX_ROW8}; // ON=HIGH
 
+volatile boolean updatenow = false;
+boolean buttonState = LOW;
+unsigned long buttonMillis = 0;
+boolean buttonHandled = true;
+
 volatile char disp[8]={
   0B11111111,
   0B11111111,
@@ -145,9 +150,7 @@ void prepareDisplay() {
   for(int r=0;r<8;r++) {
     disp[r]=B00000000;
     for(int c=0;c<8;c++) {
-      //disp[r] |= minutes[disp_min][r] & (B10000000 >> c);
-      //disp[r] |= hours  [disp_hrs][r] & (B10000000 >> c);
-      //disp[r] |= blinky[r];
+      disp[r] |= pictures[0][r] & (B10000000 >> c);
     }
   }
 }
