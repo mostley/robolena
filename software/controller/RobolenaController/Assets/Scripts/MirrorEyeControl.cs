@@ -9,10 +9,10 @@ public class MirrorEyeControl : MonoBehaviour {
 	public void Trigger() {
 		bool[] dots;
 		if (leftToRight) {
-			dots = MirrorDots (dataController.leftDots);
+			dots = MirrorDots (dataController.data.leftDots);
 			dataController.SetRightDots (dots);
 		} else {
-			dots = MirrorDots (dataController.rightDots);
+			dots = MirrorDots (dataController.data.rightDots);
 			dataController.SetLeftDots (dots);
 		}
 

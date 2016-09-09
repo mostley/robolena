@@ -14,7 +14,7 @@ public class SerialConnector : MonoBehaviour {
 
 	void Start () {
 
-		Debug.Log (string.Join(", ", SerialPort.GetPortNames ()));
+		//Debug.Log (string.Join(", ", SerialPort.GetPortNames ()));
 
 		port = new SerialPort(device, baudrate);
 		port.ReadTimeout = 500;
@@ -22,7 +22,7 @@ public class SerialConnector : MonoBehaviour {
 	}
 
 	void Update() {
-		if (port.IsOpen) {
+		/*if (port.IsOpen) {
 			if (port.BytesToRead >= 11) {
 				var data = port.ReadExisting ();
 				if (!string.IsNullOrEmpty (data)) {
@@ -30,7 +30,7 @@ public class SerialConnector : MonoBehaviour {
 				}
 			}
 			port.BaseStream.Flush ();
-		}
+		}*/
 	}
 
 	void OnApplicationQuit() {

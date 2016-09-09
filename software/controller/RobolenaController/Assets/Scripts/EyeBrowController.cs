@@ -5,7 +5,7 @@ public class EyeBrowController : MonoBehaviour {
 
 	public void SetRotation(float angle)
 	{
-		var euler = transform.rotation.eulerAngles;
-		transform.rotation = Quaternion.Euler(euler.x, euler.y, angle);
+		var euler = transform.localEulerAngles;
+		transform.localEulerAngles = new Vector3(euler.x, euler.y, angle);
 	}
 }

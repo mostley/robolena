@@ -13,6 +13,7 @@ public class SocketController : MonoBehaviour {
 	}
 
 	public void SetDots(bool[] dots) {
+		Debug.Log ("SetDots " + dots);
 		for (int i = 0; i < dots.Length; i++) {
 			if (dots [i]) {
 				this.renderers [i].materials [0].color = Color.red;
